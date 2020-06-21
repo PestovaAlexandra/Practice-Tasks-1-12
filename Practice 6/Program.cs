@@ -34,7 +34,7 @@ namespace Practice_6
         }
         public static void B(int n, ref double last, ref int count, ref int maxCount, ref double maxLast)
         {                                                                                                       //Основной метод. Находит значения всех членов последовательности, находит возрастающие подпоследовательности,
-                                                                                                                //вычисляет длины подпоследовательностей, запоминает последний элемент подпоследовательности,
+                                                                                                               //вычисляет длины подпоследовательностей, запоминает последний элемент подпоследовательности,
                                                                                                                 //находит длину максмимально длинной возрастающей подпоследовательности
             double member;
             for (int i = 1; i <= n; i++)
@@ -60,7 +60,7 @@ namespace Practice_6
                 }
             }
             if (maxCount > 1)
-                Console.WriteLine($"Максимальная длина возрастающей подпоследовательности {maxCount}." +
+                Console.WriteLine($"\nМаксимальная длина возрастающей подпоследовательности {maxCount}." +
                     $" Её последний элемент {maxLast}.");
             else
             {
@@ -73,18 +73,21 @@ namespace Practice_6
             int count = 1, maxCount = 0;                                                                          //длина максимальной возрастающей подпоследовательности
             double last = 0, maxLast = 0;
             string choice = "";
-
+            Console.WriteLine("Построение последовательности чисел ак = ( ак–1 + ак-2 ) / 2 –  ак–3.\n" +
+                "Приложение строит N элементов последовательности. Определяет длину максимальной возрастающей подпоследовательности.\n" +
+                "Печатает последовательность, длину и последний элемент максимальной возрастающей подпоследовательности. ");
             while (choice != "exit")
             {
+                count = 1;
                 //Ввод первых 3-х членов последовательности
-                Console.WriteLine("Введите первые 3 члена последовательности");
+                Console.WriteLine("\nВведите первые 3 члена последовательности");
                 Console.WriteLine("a1=");
                 InputDouble(Console.ReadLine(), ref a1);
 
-                Console.WriteLine("a2");
+                Console.WriteLine("a2=");
                 InputDouble(Console.ReadLine(), ref a2);
 
-                Console.WriteLine("a3");
+                Console.WriteLine("a3=");
                 InputDouble(Console.ReadLine(), ref a3);
 
                 //Ввод количества выводимых членов последовательности 
@@ -95,11 +98,10 @@ namespace Practice_6
                 B(n, ref last, ref count, ref maxCount, ref maxLast);
 
                 Console.WriteLine("\nДля выхода из программы введите \"exit\". " +
-                    "Чтобы продолжить программу, введите 1.");
+                    "Чтобы продолжить программу, введите любую букву или цифру.");
                 choice = Console.ReadLine();
             }
 
-            Console.ReadKey();
 
         }
     }

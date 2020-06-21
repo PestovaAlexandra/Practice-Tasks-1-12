@@ -85,7 +85,7 @@ namespace Practice_5
                 }
 
             }
-            Console.WriteLine("Матрица:\n");
+            Console.WriteLine("Матрица, записанная змейкой. Числа от 1 до 64:\n");
             for (i = 0; i < n; i++)                                                     //Вывод матрицы на экран
             {
                 for (j = 0; j < n; j++)

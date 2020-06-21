@@ -35,6 +35,8 @@ namespace Practice_3
                 {
                     try
                     {
+                        Console.WriteLine("Приложение определяет, входит ли точка с координатами X и Y\n" +
+                            "в область с координатами : -1<=x<=1 && -1<=y<=1");
                         Console.WriteLine("Введите координаты точки");
                         Console.WriteLine("X:");
                         str = Console.ReadLine();

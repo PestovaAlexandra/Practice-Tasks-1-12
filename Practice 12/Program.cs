@@ -102,7 +102,8 @@ namespace Practice_12
             TreeNode root2 = null;
             TreeNode root3 = null;
 
-            Console.WriteLine("Введите число элементов последовательности");
+            Console.WriteLine("Сортировка массивов");
+            Console.WriteLine("Введите число элементов массива");
             n = Natural(out n);                                                                                             //Ввод числа элементов последовательности и проверка на корректность ввода
 
             int[] arrayNoSort = new int[n];                                                                                //Хранение неотсортированного массива

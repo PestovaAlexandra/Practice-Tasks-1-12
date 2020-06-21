@@ -38,12 +38,13 @@ namespace Practice_9
             string temp = "";
             string choice = "";
             bool keepOn;
+            Console.WriteLine("Программа выполняет подсчет двух сумм в линейном списке: всех положительных и всех отрицательных значений,\nзаписанных в информационные поля элементов списка.");
             while (choice != "exit")
             {
                 NodeList item = new NodeList();
                 keepOn = true;
 
-                Console.WriteLine("Создание списка. Введите его длину.");
+                Console.WriteLine("\nСоздание списка. Введите его длину.");
                 temp = Console.ReadLine();
                 InputInteger(temp, ref n); //Ввод длины списка
 
@@ -56,10 +57,9 @@ namespace Practice_9
                     CountPlusAndMines(item);
                 }
 
-                Console.WriteLine("\nДля выхода из программы введите \"exit\". Чтобы продолжить программу, введите 1.");
+                Console.WriteLine("\nДля выхода из программы введите \"exit\". Чтобы продолжить программу, введите любую букву или цифру.");
                 choice = Console.ReadLine();
             }
-            Console.ReadKey();
         }
     }
 }

@@ -57,6 +57,31 @@ namespace Practice_11
             }
             return result;
         }
+        public static string SolutionBack(int n, string RusString, char[] alphabetSmall,
+            char[] alphabetBig, CircularList circularListSmall, CircularList circularListBig)                           //Метод для замены символов входной строки на символы того же алфавита со сдвигом n
+        {
+            string result = "";                                                                                         //Переменная для хранения зашифрованной строки
+            char temp;                                                                                                  //Переменная для хранения текущего символа строки
+
+            for (int i = 0; i < RusString.Length; i++)                                                                  //Перебор символов входной строки
+            {
+                temp = RusString[i];                                                                                    //Фиксация текущего символа
+                if (alphabetBig.Contains(temp))                                                                         //Если символ входит в множество заглавных букв
+                {
+                    circularListBig.EcryptBack(n, temp, ref result);                                                         //Замена символа происходит с помощью списка с заглавными буквами
+                }
+                else
+                    if (alphabetSmall.Contains(temp))                                                                   //Если символ входит в множество прописных букв
+                {
+                    circularListSmall.EcryptBack(n, temp, ref result);                                                      //Замена символа происходит с помощью списка с прописными буквами
+                }
+                else                                                                                                    //Если символ является не буквой
+                {
+                    result += temp;                                                                                     //Замена не происходит
+                }
+            }
+            return result;
+        }
 
         static void Main(string[] args)
         {
@@ -85,6 +110,8 @@ namespace Practice_11
 
             while (choice != "exit")                                                                                    //Пока не введена команда для завершения работы программы
             {
+                Console.WriteLine("Добро пожаловать. Приложение зашифровывает текст, записанный с помощью русских букв, знаков препинания и других символов.\n" +
+                    "Заменяются буквы, символы остаются без изменений");
 
                 Console.WriteLine("Введите длину сдвига");
                 Input(out n, 1, 10000);                                                                                 //Ввод размера сдвига по алфавиту
@@ -94,7 +121,12 @@ namespace Practice_11
 
 
                 result = Solution(n, RusString, alphabetSmall, alphabetBig, circularListSmall, circularListBig);        //Вызов функции для начала процесса шифрования
+                Console.WriteLine("Зашифрованный текст");
                 Console.WriteLine(result);
+                Console.WriteLine("Расшифрованный текст");
+                result = SolutionBack(n, result, alphabetSmall, alphabetBig, circularListSmall, circularListBig);        //Вызов функции для начала процесса шифрования
+                Console.WriteLine(result);
+
                 Console.WriteLine
                     ("Для выхода из программы введите \"exit\". Для продолжения программы введите любую букву.");
 
